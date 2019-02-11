@@ -1,5 +1,10 @@
 pragma solidity >=0.4.22 <0.6.0;
 
+/**
+ * This contract is modified by Jinlicoin Team. 
+ */
+
+
 interface tokenRecipient {
     function receiveApproval(address _from, uint256 _value, address _token, bytes calldata _extraData) external;
 }
@@ -73,6 +78,8 @@ contract Jinlicoin {
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply;
+    
+    using SafeMath for unit256; // using safemath to protect the contract 
 
     // This creates an array with all balances
     mapping (address => uint256) public balanceOf;
